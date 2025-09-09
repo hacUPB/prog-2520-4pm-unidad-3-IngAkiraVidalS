@@ -22,13 +22,15 @@ print ("Su IMC = ", imc)
 imc = float (input ("ingrese su indice de masa corporal (IMC): "))
 
 #evaluar la categoria 
-if imc < 1805:
+if imc < 18.05:
     print("bajo de peso → Requiere atención.")
-elif 1805 <= imc <= 24.9:
+elif 18.05 <= imc <= 24.9:
     print("peso saludable")
 elif 25 <= imc <= 29.9:
     print("sobrepeso → Requiere atención.")
 else: # IMC >= 30
     print("Obesidad → Requiere atención.")
+
+print(f"{nombre}, su IMC es {imc:0.2f} y su condicion es {mensaje}.")
 
 
