@@ -1,0 +1,16 @@
+## Evaluación de la primera etapa:
+
+## Tabla 1. Checklist de requisitos del reto (por problema)
+
+| Requisito | Cumple           2 Parcialmente  1 No cumple     0 | Evidencia (página/tabla/figura/sección) |
+| --- | --- | --- |
+| Contexto aeronáutico claro y relevante |  | Se encuentran dentro de la carpeta Reto1_Uni3 en el archivo llamado ProblemasReto.md |
+| Clara definición y clasificación de las variables de entrada, salida, de control e intermedias |  |Se encuentran dentro de la carpeta Reto1_Uni3 en el archivo llamado VariablesRetoU3.md |
+| Clara definición de las constantes que se utilizan en el problema |  | Constante común en todo: G = 9.81 m/s^2. Opción 1: Incrementos de velocidad (+-5 m/s) y altitud: (+-100 m). Opción 2: La fórmula de sustentación y el valor de G. Opción 3: G y la fórmula aerodinámica para calcular márgenes de pérdida. |
+| Ecuación que relaciona adecuadamente las variables del problema |  | Opción 1: rho = 1.225 * (1 - 2.25577e-5 * alt) ** 4 (esto se refiere a la altitud y modelo atmosférico simplificado), q = 0.5 * rho * V * V (Se refiere a la presión dinámica), D = q * S * CD (Se refiere a la fuerza de arrastre). Opción 2: Vvr = raíz cuadrada(2W/pSCl) (Calcula la Velocidad de Rotación). Opción 3: peso_final = peso_inicial - (consumo_hora * tiempo_espera), Vs = raíz cuadrada(2W/pSClmax) (Fórmula de velocidad de pérdida), margen = Vespera - Vs (Márgen frente a pérdida), t autonomía = fuel disponible/consumo horario. |
+| No es solo cálculo directo |  | Enunciado y su respectivo código: En los 3 problemas se incluyen toma de datos del usuario para dar inicio al desarollo de cada problema hasta llegar al resultado correspondiente. |
+| Al menos un bucle (variable de control, condición de parada) |  | Opción 1: accion (esta como variable de contról que sería la respuesta del usuario), X (Condición de parada, se usa cuando el usuario escribe "X"; el bucle termina con "break"). Este bucle permite modificar velocidad o altitud paso a paso hasta que el usuario decida salir. Opción 2: V (Variable de control, velocidad), V_R (Condición de parada, cuando la velocidad de rotación alcanza o supera V_R; velocidad de rotación necesaria para despegar). Este bucle simula el avance por la pista hasta llegar a la velocidad de rotación. Opción 3: tiempo (Variable de control), tiempo_espera (Condición de parada, cuando el tiempo de espera alcanzado es igual al tiempo solicitado por el usuario). Este bucle simula el consumo de combustible durante el patrón de espera hasta completar el tiempo ingresado. |
+| Al menos una sentencia condicional significativa |  | Opción 1: if accion == "a": V = V + 5.0 ó elif accion == "d": V = max(0.0, V - 5.0). Opción 2: if V >= V_R: print("El avión alcanza la velocidad de rotación y puede despegar"). Opción 3: if margen > 0: print("La aeronave puede mantenerse en espera con seguridad"). |
+| Menú repetitivo hasta “Salir” |  | Usamos la función menu() con while true. |
+| Sin listas, diccionarios, tuplas ni sets |  | Lo usamos con variables simples como lo son int, str y float. |
+| Declaración de uso de IA (si aplica) |  | Usamos IA para darnos una idea con el desarrollo de los enunciados, y nos guiamos para darle una buena estructura al código para su buen funcionamiento en el momento de usarlo y evitar posibles errores que podrían surgir. |
